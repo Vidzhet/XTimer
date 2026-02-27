@@ -28,7 +28,17 @@ XTimerSettings::XTimerSettings(QWidget* parent) : QDialog(parent)
 
 	auto* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
 
-	connect(buttons, &QDialogButtonBox::accepted, this, [&]() {
+	QTableWidget* table = new QTableWidget(this); // used for segments editing in "Run Configuration" page
+	auto parseAndSaveSegments = [this, table]() {
+		settingsRunConfig.clearSegments();
+		for (int i = 0; i < table->rowCount(); i++) {
+			settingsRunConfig.segments.append({ table->item(i, 0)->text(), Timer::formatTimeToMs(table->item(i, 1)->text()) });
+		}
+		};
+
+	connect(buttons, &QDialogButtonBox::accepted, this, [this, parseAndSaveSegments]() {
+		parseAndSaveSegments();
+		config->CopyRunBase(settingsRunConfig);
 		config->CopyBase(settingsConfig);
 		config->ApplyUpdates();
 		QDialog::reject(); // exec() returns rejected = proper exit, if accepted - window wants to be recreated. if you can refactor it in a way that its just rebuilding the content, please do
@@ -178,14 +188,6 @@ XTimerSettings::XTimerSettings(QWidget* parent) : QDialog(parent)
 
 	QWidget* pageRunConfig = new QWidget();
 	QVBoxLayout* runConfigVL = new QVBoxLayout(pageRunConfig);
-
-	QTableWidget* table = new QTableWidget(this);
-	auto parseAndSaveSegments = [this, table]() {
-		settingsRunConfig.clearSegments();
-		for (int i = 0; i < table->rowCount(); i++) {
-			settingsRunConfig.segments.append({ table->item(i, 0)->text(), Timer::formatTimeToMs(table->item(i, 1)->text()) });
-		}
-	};
 
 	QHBoxLayout* saveButtonsHL = new QHBoxLayout();
 	QPushButton* runConfigSaveButton = new QPushButton("Save", this);
