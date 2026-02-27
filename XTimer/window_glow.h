@@ -1,10 +1,10 @@
 #pragma once
-#include <QWidget>
 #include <QEvent>
 #include <QGraphicsDropShadowEffect>
 #include <QPainter>
 #include <QPainterPath>
 #include <QTransform>
+#include <QWidget>
 
 class WindowGlow : public QWidget
 {

@@ -1,7 +1,7 @@
 #pragma once
-#include <QPainter>
 #include <QColor>
 #include <QLabel>
+#include <QPainter>
 
 class GradientLabel : public QLabel {
 public:
