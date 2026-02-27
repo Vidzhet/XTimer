@@ -131,7 +131,6 @@ void Timer::reset()
 
 void Timer::pause(std::chrono::steady_clock::time_point request_time)
 {
-	if (config->segments.isEmpty() || active_segment >= config->segments.count()) { return; }
 	if (!running) { return; }
 	accumulatedMs += std::chrono::duration_cast<std::chrono::milliseconds>(request_time - startTime).count();
 	running = false;
@@ -143,7 +142,6 @@ void Timer::pause(std::chrono::steady_clock::time_point request_time)
 
 void Timer::resume(std::chrono::steady_clock::time_point request_time)
 {
-	if (config->segments.isEmpty() || active_segment >= config->segments.count()) { return; }
 	if (running) { return; }
 	startTime = request_time;
 	running = true;
