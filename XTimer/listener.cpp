@@ -1,8 +1,10 @@
 #include "listener.h"
-#include <qmessagebox.h>
+#include <QMessageBox>
 
 Listener::Listener()
 {
+    server.setSocketOptions(QLocalServer::UserAccessOption);
+
     if (!server.listen("XTimerAPI")) {
         qWarning() << "Unable to start QLocalServer";
     }

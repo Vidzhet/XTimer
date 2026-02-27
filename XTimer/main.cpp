@@ -1,15 +1,15 @@
-#include <QtWidgets/QApplication>
-#include <QMainWindow>
-#include <QMenuBar>
+#include <chrono>
 #include <QBoxLayout>
 #include <QLabel>
+#include <QMainWindow>
+#include <QMenuBar>
+#include <QMessageBox>
+#include <QtWidgets/QApplication>
 #include "styles.h"
 #include "listener.h"
 #include "window.h"
 #include "config.h"
-#include <qmessagebox.h>
 #include "timer.h"
-#include <chrono>
 
 int main(int argc, char *argv[])
 {

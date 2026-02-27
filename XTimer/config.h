@@ -1,9 +1,9 @@
 #pragma once
-#include <QColor>
-#include <QList>
-#include <Qstring>
 #include <QApplication>
+#include <QColor>
 #include <QLabel>
+#include <QList>
+#include <QString>
 
 class XTimerConfigBase {
 public:

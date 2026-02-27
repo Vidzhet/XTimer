@@ -1,12 +1,12 @@
-#include "timer.h"
-#include <QDateTime>
-#include <QPainter>
 #include <QColor>
-#include <qmessagebox>
-#include "listener.h"
+#include <QDateTime>
+#include <QMessageBox>
+#include <QPainter>
 #include "config.h"
-#include "window.h"
 #include "gradient_label.h"
+#include "listener.h"
+#include "timer.h"
+#include "window.h"
 
 Timer::Timer()
 {

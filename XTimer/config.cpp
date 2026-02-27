@@ -1,14 +1,14 @@
-#include "config.h"
-#include <qdatetime.h>
-#include <qapplication.h>
-#include <qtimer.h>
-#include <qwidget.h>
-#include <qfileinfo.h>
-#include <QFontDatabase.h>
+#include <QApplication>
+#include <QDateTime>
+#include <QFileInfo>
+#include <QFontDatabase>
+#include <QTimer>
+#include <QWidget>
 #include "ConfigCreator.h"
+#include "config.h"
+#include "gradient_label.h"
 #include "timer.h"
 #include "window.h"
-#include "gradient_label.h"
 
 #define APP_CONFIG_NAME QCoreApplication::applicationDirPath() + "/config.mge"
 

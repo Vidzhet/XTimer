@@ -1,7 +1,7 @@
 #pragma once
-#include <qtimer.h>
-#include <qlabel.h>
 #include <QElapsedTimer>
+#include <QLabel>
+#include <QTimer>
 
 class GradientLabel;
 

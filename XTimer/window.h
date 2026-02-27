@@ -1,11 +1,11 @@
 #pragma once
-#include <qwidget.h>
-#include <QFrame>
 #include <QBoxLayout>
-#include <QScrollArea>
+#include <QFrame>
 #include <QLabel>
 #include <QList>
 #include <QPainter>
+#include <QScrollArea>
+#include <QWidget>
 
 class XTimerWindow : public QWidget {
     Q_OBJECT

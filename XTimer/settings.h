@@ -1,7 +1,7 @@
 #pragma once
-#include <qdialog.h>
-#include <QFrame>
 #include "config.h"
+#include <QDialog>
+#include <QFrame>
 
 class XTimerSettings : public QDialog {
     Q_OBJECT

@@ -1,4 +1,4 @@
 #pragma once
-#include <qapplication.h>
+#include <QApplication>
 
 void LoadStylesGlobal(QApplication& app);
