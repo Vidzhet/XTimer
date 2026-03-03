@@ -1,5 +1,5 @@
 # XTimer
-**XTimer is a fast and feauture-full speedrun timer made in C++**
+### XTimer is a fast and feauture-full speedrun timer made in C++
 | ![img](preview.png) |
 |-|
 ## Features
