@@ -67,3 +67,10 @@ void xtimer::set_time_ms(uint64_t time_ms)
 {
 	xtimer_send((std::string("set_time_ms ") + std::to_string(time_ms)).c_str()); // bad code yeah. i dont wanna bother too much with strings
 }
+
+bool xtimer::is_running()
+{
+	char buf[2] = { 0 };
+	xtimer_send("is_running", buf, 2);
+	return atoi(buf);
+}

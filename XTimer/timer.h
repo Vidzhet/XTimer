@@ -23,6 +23,7 @@ public: // exported methods
 	uint64_t getTimeMs(std::chrono::steady_clock::time_point request_time = std::chrono::steady_clock::now());
 	QString getTimeStr(std::chrono::steady_clock::time_point request_time = std::chrono::steady_clock::now());
 	void setTime(uint64_t time_ms);
+	bool isRunning();
 private:
 	void calculateTimeDiffColor(std::chrono::steady_clock::time_point request_time);
 private:

@@ -281,6 +281,11 @@ void Timer::setTime(uint64_t time_ms)
 	label->setText(this->getTimeStr());
 }
 
+bool Timer::isRunning()
+{
+	return running;
+}
+
 void Timer::calculateTimeDiffColor(std::chrono::steady_clock::time_point request_time) // moved from Timer::next()
 {
 	const auto timer_time = this->getTimeMs();

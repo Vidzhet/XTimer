@@ -47,3 +47,9 @@ extern Listener* api;
 	result[arr.size()] = '\0'; \
 	return result
 
+#define RETURN_BOOL(b) \
+	std::string s = std::to_string(b); \
+	char* result = new char[s.size() + 1]; \
+	std::memcpy(result, s.c_str(), s.size() + 1); \
+	return result
+

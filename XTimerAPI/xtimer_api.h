@@ -14,4 +14,5 @@ namespace xtimer {
 	void get_time_str(char* buf, size_t buf_size);
 	std::string get_time_str();
 	void set_time_ms(uint64_t time_ms);
+	bool is_running();
 }

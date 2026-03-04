@@ -74,3 +74,7 @@ COMMAND(set_time_ms) {
     timer->setTime(args[0].toULongLong());
     NORETURN;
 }
+
+COMMAND(is_running) {
+    RETURN_BOOL(timer->isRunning());
+}
