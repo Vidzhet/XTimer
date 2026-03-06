@@ -91,7 +91,7 @@ QString Timer::getActiveSegmentTimeDiff()
 void Timer::start(std::chrono::steady_clock::time_point request_time)
 {
 	startTime = request_time;
-	accumulatedMs = 1;
+	accumulatedMs = 0;
 	pausedDuration = std::chrono::steady_clock::duration::zero();
 	running = true;
 	active_segment = 0;
@@ -142,7 +142,7 @@ void Timer::pause(std::chrono::steady_clock::time_point request_time)
 
 void Timer::resume(std::chrono::steady_clock::time_point request_time)
 {
-	if (running) { return; }
+	if (running || accumulatedMs == 0) { return; }
 	startTime = request_time;
 	running = true;
 
